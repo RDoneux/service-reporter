@@ -18,6 +18,7 @@
   "description": "",
   "devDependencies": {
     "@eslint/js": "^9.18.0",
+    "@types/express": "^5.0.0",
     "@types/jest": "^29.5.14",
     "esbuild": "^0.24.2",
     "eslint": "^9.18.0",
@@ -40,5 +41,13 @@
     "titleTemplate": "{classname}-{title}",
     "ancestorSeparator": " › ",
     "usePathForSuiteName": "true"
+  },
+  "dependencies": {
+    "@types/debug": "^4.1.12",
+    "axios": "^1.7.9",
+    "debug": "^4.4.0",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "supertest": "^7.0.0"
   }
 }
