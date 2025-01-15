@@ -14,8 +14,8 @@ import copy from 'esbuild-plugin-copy';
         assets: {
           from: ['./src/views/**/*'],
           to: ['./dist/views'],
-        }
-      })
+        },
+      }),
     ],
   };
   const { warnings, errors }: BuildResult = await build(buildOptions);

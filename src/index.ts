@@ -12,10 +12,13 @@ configDotenv();
 const debug = debugFactory(DebugNamespace.STARTUP);
 const app = express();
 
-app.engine('handlebars', create({
-  layoutsDir: path.join(__dirname, '/views/layouts'),
-  partialsDir: path.join(__dirname, '/views/partials'),
-}).engine);
+app.engine(
+  'handlebars',
+  create({
+    layoutsDir: path.join(__dirname, '/views/layouts'),
+    partialsDir: path.join(__dirname, '/views/partials'),
+  }).engine
+);
 app.set('view engine', 'handlebars');
 app.set('views', path.join(__dirname, '/views'));
 
