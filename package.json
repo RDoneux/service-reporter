@@ -5,8 +5,12 @@
   "scripts": {
     "dev": "npx nodemon ./src/index.ts",
     "build": "npx ts-node ./build.ts",
-    "lint": "npx prettier . --write && npx eslint . --fix",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "npx eslint . --fix",
+    "lint:ci": "npx eslint .",
+    "prettier": "npx prettier . --write",
+    "prettier:ci": "npx prettier . --check",
+    "test": "jest",
+    "test:ci": "jest --ci --coverage --coverageDirectory=coverage --passWithNoTests",
     "prepare": "husky"
   },
   "author": "",
@@ -14,12 +18,27 @@
   "description": "",
   "devDependencies": {
     "@eslint/js": "^9.18.0",
+    "@types/jest": "^29.5.14",
     "esbuild": "^0.24.2",
     "eslint": "^9.18.0",
     "globals": "^15.14.0",
     "husky": "^9.1.7",
+    "jest": "^29.7.0",
+    "jest-junit": "^16.0.0",
     "prettier": "^3.4.2",
+    "ts-jest": "^29.2.5",
+    "ts-node": "^10.9.2",
     "typescript": "^5.7.3",
     "typescript-eslint": "^8.20.0"
+  },
+  "jest-junit": {
+    "suiteName": "jest tests",
+    "outputDirectory": "/junit",
+    "outputName": "junit.xml",
+    "uniqueOutputName": "false",
+    "classNameTemplate": "{classname}-{title}",
+    "titleTemplate": "{classname}-{title}",
+    "ancestorSeparator": " › ",
+    "usePathForSuiteName": "true"
   }
 }
