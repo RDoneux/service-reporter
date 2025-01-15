@@ -1,4 +1,5 @@
 import { build, BuildOptions, BuildResult, Message } from 'esbuild';
+import copy from 'esbuild-plugin-copy';
 
 (async () => {
   const buildOptions: BuildOptions = {
@@ -7,6 +8,15 @@ import { build, BuildOptions, BuildResult, Message } from 'esbuild';
     bundle: true,
     minify: true,
     platform: 'node',
+    plugins: [
+      copy({
+        resolveFrom: 'cwd',
+        assets: {
+          from: ['./src/views/**/*'],
+          to: ['./dist/views'],
+        }
+      })
+    ],
   };
   const { warnings, errors }: BuildResult = await build(buildOptions);
 
