@@ -6,6 +6,7 @@ import { build, BuildOptions, BuildResult, Message } from 'esbuild';
     outdir: './dist',
     bundle: true,
     minify: true,
+    platform: 'node',
   };
   const { warnings, errors }: BuildResult = await build(buildOptions);
 
