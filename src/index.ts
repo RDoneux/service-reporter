@@ -15,5 +15,5 @@ app.use(logger);
 app.get('/', serviceHealth);
 
 app.listen(process.env.PORT ?? 8080, () => {
-    debug(`Server started on port ${process.env.PORT ?? 8080}`);
-})
+  debug(`Server started on port ${process.env.PORT ?? 8080}`);
+});
