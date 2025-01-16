@@ -4,9 +4,9 @@
     <link rel='stylesheet' type='text/css' href='/service-report.css' />
   </head>
   <body>
-    <h1>{{status}}</h1>
+    <h1>{{> service-status}}</h1>
     {{#each jobs}}
-      <h1>{{this.name}}</h1>
+      <h1>{{this}}</h1>
     {{/each}}
     <h1>{{numExecutors}}</h1>
   </body>
