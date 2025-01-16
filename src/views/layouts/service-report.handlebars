@@ -3,6 +3,10 @@
     <title>{{title}}</title>
   </head>
   <body>
-    <h1>{{title}}</h1>
+    <h1>{{status}}</h1>
+    {{#each jobs}}
+      <h1>{{this.name}}</h1>
+    {{/each}}
+    <h1>{{numExecutors}}</h1>
   </body>
 </html>

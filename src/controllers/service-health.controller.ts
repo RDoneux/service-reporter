@@ -1,8 +1,18 @@
 import { Request, Response } from 'express';
+import {
+  getJenkinsHealth,
+  JenkinsHealth,
+} from '../services/service-health.service';
 
-export default function serviceHealth(request: Request, response: Response) {
+export default async function serviceHealth(
+  request: Request,
+  response: Response
+) {
+  const { status, jobs, numExecutors }: JenkinsHealth =
+    await getJenkinsHealth();
+
   response.render('main', {
     layout: 'service-report',
-    title: 'Service Reporter',
+    ...{ status, jobs, numExecutors },
   });
 }
